@@ -27,7 +27,7 @@ img {
   font-family: 'VT323', monospace;
 }
 
-.headBar {
+#headBar {
   display: flex;
   /* Flex convierte a todos los objetos dentro de este (todo dentro del div con clase headBar) en flex items.
     Esto permite aplicarles distintas propiedades para localizarlos en un punto especifico de forma mas facil, 
@@ -35,13 +35,13 @@ img {
   padding: 16px;
   font-weight: 600;
   justify-content: space-evenly;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   background-color: black;
   min-height: 60px;
 }
 
-.logoHolder {
+#logoHolder {
   display: flex;
   justify-content: space-evenly;
   padding: 32px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
