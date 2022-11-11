@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); /* Importa una fuente de google */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* Permite que la pagina ocupe la ventana entera */
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f0eef1;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+img {
+  max-width: 100px;
+}
+
+.subtitle {
+  font-family: 'VT323', monospace;
+}
+
+.headBar {
+  display: flex;
+  /* Flex convierte a todos los objetos dentro de este (todo dentro del div con clase headBar) en flex items.
+    Esto permite aplicarles distintas propiedades para localizarlos en un punto especifico de forma mas facil, 
+    o en este caso separarlos de forma uniforme*/
+  padding: 16px;
+  font-weight: 600;
+  justify-content: space-evenly;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: black;
+  min-height: 60px;
+}
+
+.logoHolder {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 32px;
+}
