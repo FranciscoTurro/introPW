@@ -45,3 +45,13 @@ img {
   padding: 32px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
+
+#content {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+}
+
+.noticia {
+  border: 2px solid black;
+}
