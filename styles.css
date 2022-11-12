@@ -50,6 +50,27 @@ img {
   display: flex;
   gap: 40px;
   padding: 30px;
+  justify-content: center;
+}
+
+.sponsorsImg {
+  display: flex;
+  gap: 40px;
+}
+
+.sponsorsImg img {
+  max-height: 50px;
+}
+
+.redes {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 80px;
+}
+
+.imgChat {
+  cursor: pointer;
 }
 
 .noticia {
