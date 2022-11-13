@@ -34,14 +34,21 @@ if (imgChat) {
 }
 
 const sub = document.querySelector('.sub');
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 if (sub) {
   sub.addEventListener('click', () => {
     const user = document.querySelector('#userName');
     const email = document.querySelector('#email');
+
     if (user.value && email.value) {
-      localStorage.setItem('userValue', user.value);
-      localStorage.setItem('emailValue', email.value);
-      document.location.reload();
+      if (emailRegex.test(email.value)) {
+        localStorage.setItem('userValue', user.value);
+        localStorage.setItem('emailValue', email.value);
+        document.location.reload();
+      } else {
+        alert('Ingrese un email valido, con el formato usuario@plataforma.com');
+      }
     } else {
       alert('Es necesario completar ambos campos!');
       return;
