@@ -19,8 +19,8 @@ a {
   font-size: 16px;
 }
 
-img {
-  max-width: 100px;
+#logoHolder img {
+  width: 100px;
 }
 
 .subtitle {
@@ -63,6 +63,7 @@ img {
 }
 
 .redes {
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -75,4 +76,23 @@ img {
 
 .noticia {
   border: 2px solid black;
+}
+
+/* Porcentajes en css funcionan en base al contenedor padre. Esto quiere decir
+que section tiene como ancho maximo el 50% del contendor que lo contiene.
+Las mitades (primera y segunda) tienen como maximo el 50% de su padre, en este
+caso section, que tiene como maximo la mitad de SU padre. */
+.section {
+  max-width: 50%;
+  display: flex;
+  font-size: 20px;
+}
+
+.primera {
+  max-width: 50%;
+}
+
+.segunda img {
+  height: 360px;
+  width: 500px;
 }
