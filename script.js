@@ -12,6 +12,13 @@ if (noticiaEth) {
   });
 }
 
+const noticiaAcceso = document.querySelector('.noticiaAcceso');
+if (noticiaAcceso) {
+  noticiaAcceso.addEventListener('click', () => {
+    document.location.href = './paginas/noticiaAcceso.html';
+  });
+}
+
 const noticiaSec = document.querySelector('.noticiaSecurity');
 if (noticiaSec) {
   noticiaSec.addEventListener('click', () => {
