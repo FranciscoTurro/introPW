@@ -32,3 +32,41 @@ if (imgChat) {
     alert('Chat en vivo');
   });
 }
+
+const sub = document.querySelector('.sub');
+if (sub) {
+  sub.addEventListener('click', () => {
+    const user = document.querySelector('#userName');
+    const email = document.querySelector('#email');
+    if (user.value && email.value) {
+      localStorage.setItem('userValue', user.value);
+      localStorage.setItem('emailValue', email.value);
+      document.location.reload();
+    } else {
+      alert('Es necesario completar ambos campos!');
+      return;
+    }
+  });
+}
+
+const changeLogin = () => {
+  const userValue = localStorage.getItem('userValue');
+  const emailValue = localStorage.getItem('emailValue');
+  if (userValue && emailValue) {
+    const login = document.querySelector('.login');
+    login.innerHTML = `Hola, ${userValue}. Ya estas suscrito a nuestro boletín, podes esperarlo en ${emailValue}`;
+    let btn = document.createElement('button');
+    btn.innerHTML = 'Olvidar usuario';
+    login.appendChild(btn);
+
+    btn.addEventListener('click', () => {
+      localStorage.removeItem('userValue');
+      localStorage.removeItem('emailValue');
+      document.location.reload();
+    });
+  }
+};
+
+addEventListener('load', () => {
+  changeLogin();
+});
