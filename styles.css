@@ -48,9 +48,10 @@ a {
 
 #content {
   display: flex;
-  gap: 40px;
+  flex-wrap: wrap; /*permite que los hijos del contenedor puedan "fluir" en varias lineas en vez de mantenerse en una sola*/
+  gap: 40px; /*crea un espacio de 40 pixeles en todos los hijos del contenedor, propiedad de display flex*/
   padding: 30px;
-  justify-content: center;
+  justify-content: center; /*justify content y align items localizan los hijos del contenedor en la posicion especificada, center start o end*/
 }
 
 .sponsorsImg {
@@ -75,8 +76,12 @@ a {
 }
 
 .noticia {
-  border: 2px solid black;
   cursor: pointer;
+}
+
+.noticia img {
+  width: 440px;
+  height: 310px;
 }
 
 /* Porcentajes en css funcionan en base al contenedor padre. Esto quiere decir
@@ -104,7 +109,8 @@ caso section, que tiene como maximo la mitad de SU padre. */
 }
 
 #main {
-  padding: 20px;
+  padding: 10px;
+  gap: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,5 +118,10 @@ caso section, que tiene como maximo la mitad de SU padre. */
 }
 
 #main img {
-  width: 100px;
+  width: 900px;
+  height: 470px;
+}
+
+#main a {
+  color: red;
 }
