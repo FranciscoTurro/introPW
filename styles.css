@@ -76,6 +76,7 @@ a {
 
 .noticia {
   border: 2px solid black;
+  cursor: pointer;
 }
 
 /* Porcentajes en css funcionan en base al contenedor padre. Esto quiere decir
@@ -95,4 +96,21 @@ caso section, que tiene como maximo la mitad de SU padre. */
 .segunda img {
   height: 360px;
   width: 500px;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: center;
+}
+
+#main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 50%;
+}
+
+#main img {
+  width: 100px;
 }
