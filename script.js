@@ -29,7 +29,7 @@ if (noticiaSec) {
 const imgChat = document.querySelector('.imgChat');
 if (imgChat) {
   imgChat.addEventListener('click', () => {
-    alert('Chat en vivo');
+    window.open('https://www.livechat.com/');
   });
 }
 
@@ -75,5 +75,9 @@ const changeLogin = () => {
 };
 
 addEventListener('load', () => {
+  changeLogin();
+});
+
+addEventListener('change', () => {
   changeLogin();
 });
