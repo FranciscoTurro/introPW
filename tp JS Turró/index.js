@@ -15,6 +15,8 @@ const btnAltaVentas = document.querySelector('.btnAltaVentas');
 const legajoConsu2 = document.querySelector('#legajoConsu2');
 const btnLegajoConsu2 = document.querySelector('#btnLegajoConsu2');
 const resultadoConsulta2 = document.querySelector('#resultadoConsulta2');
+const btnLegajoConsu3 = document.querySelector('#btnLegajoConsu3');
+const resultadoConsulta3 = document.querySelector('#resultadoConsulta3');
 
 let arrayEmpleados = [
   {
@@ -31,13 +33,23 @@ let arrayEmpleados = [
 let arrayVentas = [
   {
     fecha: '22-11-22',
-    importe: '2',
+    importe: '5',
     legajo: 'a',
   },
   {
     fecha: '21-11-22',
-    importe: '14',
+    importe: '5',
     legajo: 'a',
+  },
+  {
+    fecha: '22-11-22',
+    importe: '10',
+    legajo: 'b',
+  },
+  {
+    fecha: '21-11-22',
+    importe: '10',
+    legajo: 'b',
   },
 ];
 
@@ -184,13 +196,24 @@ btnLegajoConsu2.addEventListener('click', () => {
 
 btnLegajoConsu3.addEventListener('click', () => {
   //quiere ver cada vendedor, el subtotal (suma de sus ventas) y el total de todos los vendedores
-  const legajoRepetido = arrayEmpleados.find(
-    (empleado) => empleado.legajo === legajoConsu3.value
-  );
-  if (legajoConsu3.value !== '' && legajoRepetido !== undefined) {
-  } else {
-    alert(
-      'ERROR: Ingrese un numero de legajo valido para realizar una consulta'
+  let total = 0;
+  arrayEmpleados.forEach((empleado) => {
+    const ventasEmpleado = arrayVentas.filter(
+      (venta) => venta.legajo === empleado.legajo
     );
-  }
+    let txt = `Ventas del vendedor ${empleado.legajo}: `;
+    let subTotal = 0;
+    let i = 1;
+    ventasEmpleado.forEach((venta) => {
+      txt += `Venta ${i} con importe $${venta.importe} en el ${venta.fecha}. `;
+      i++;
+      subTotal += parseInt(venta.importe);
+    });
+    txt += `Subtotal del vendedor: $${subTotal}`;
+    total += subTotal;
+    const lineBreak = document.createElement('br');
+    resultadoConsulta3.innerHTML += txt;
+    resultadoConsulta3.appendChild(lineBreak);
+  });
+  resultadoConsulta3.innerHTML += `Total vendido de todos los empleados: $${total}`;
 });
