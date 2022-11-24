@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="index.js"></script>
+    <title>TP Francisco Turró</title>
+  </head>
+  <body>
+    <div id="altaEmpleados">
+      <label for="nombre">Nombre del empleado</label>
+      <input type="text" id="nombre" />
+      <label for="apellido">Apellido del empleado</label>
+      <input type="text" id="apellido" />
+      <label for="legajoEmp">Legajo del empleado</label>
+      <input type="text" id="legajoEmp" />
+      <button class="btnAlta">Alta</button>
+      <button class="btnBaja">Baja</button>
+      <button class="btnModi">Modificar</button>
+    </div>
+    <br />
+    <div id="altaVentas">
+      <label for="legajoVent">Legajo del empleado asociado a la venta</label>
+      <input type="text" id="legajoVent" />
+      <label for="fecha">Fecha de la venta</label>
+      <input type="text" id="fecha" />
+      <label for="importe">Importe de la venta</label>
+      <input type="text" id="importe" />
+      <button class="btnAltaVentas">Alta</button>
+    </div>
+    <br />
+    <div id="legajoConsulta">
+      <label for="legajoConsu">Legajo del empleado a consultar</label>
+      <input type="text" id="legajoConsu" />
+      <button id="btnLegajoConsu">Realizar consulta</button>
+      <p id="resultadoConsulta"></p>
+    </div>
+  </body>
+</html>
