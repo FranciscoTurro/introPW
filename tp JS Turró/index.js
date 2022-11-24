@@ -4,7 +4,6 @@ const legajoEmp = document.querySelector('#legajoEmp');
 const btnAlta = document.querySelector('.btnAlta');
 const btnBaja = document.querySelector('.btnBaja');
 const btnModi = document.querySelector('.btnModi');
-const tablaEmpleados = document.querySelector('#tablaEmpleados');
 const legajoConsu1 = document.querySelector('#legajoConsu1');
 const btnLegajoConsu1 = document.querySelector('#btnLegajoConsu1');
 const resultadoConsulta1 = document.querySelector('#resultadoConsulta1');
@@ -17,44 +16,11 @@ const btnLegajoConsu2 = document.querySelector('#btnLegajoConsu2');
 const resultadoConsulta2 = document.querySelector('#resultadoConsulta2');
 const btnLegajoConsu3 = document.querySelector('#btnLegajoConsu3');
 const resultadoConsulta3 = document.querySelector('#resultadoConsulta3');
+const tablaEmpleados = document.querySelector('.tablaEmpleados');
+const tablaVentas = document.querySelector('.tablaVentas');
 
-let arrayEmpleados = [
-  {
-    nombre: 'a',
-    apellido: 'a',
-    legajo: 'a',
-  },
-  {
-    nombre: 'b',
-    apellido: 'b',
-    legajo: 'b',
-  },
-];
-let arrayVentas = [
-  {
-    fecha: '22-11-22',
-    importe: '5',
-    legajo: 'a',
-  },
-  {
-    fecha: '21-11-22',
-    importe: '5',
-    legajo: 'a',
-  },
-  {
-    fecha: '22-11-22',
-    importe: '10',
-    legajo: 'b',
-  },
-  {
-    fecha: '21-11-22',
-    importe: '10',
-    legajo: 'b',
-  },
-];
-
-//googlear como hacer una html table con la info de un array.
-//las ventas son un array aparte
+let arrayEmpleados = [];
+let arrayVentas = [];
 
 btnAlta.addEventListener('click', () => {
   const legajoRepetido = arrayEmpleados.find(
@@ -73,6 +39,8 @@ btnAlta.addEventListener('click', () => {
       nombre.value = '';
       apellido.value = '';
       legajoEmp.value = '';
+
+      crearTablaEmpleados();
 
       alert('Empleado agregado');
     } else {
@@ -95,6 +63,8 @@ btnBaja.addEventListener('click', () => {
     apellido.value = '';
     legajoEmp.value = '';
 
+    crearTablaEmpleados();
+
     alert('Empleado eliminado');
   } else {
     alert(
@@ -116,6 +86,8 @@ btnModi.addEventListener('click', () => {
     nombre.value = '';
     apellido.value = '';
     legajoEmp.value = '';
+
+    crearTablaEmpleados();
 
     alert('Modificacion realizada');
   } else {
@@ -141,6 +113,8 @@ btnAltaVentas.addEventListener('click', () => {
       fecha.value = '';
       importe.value = '';
       legajoVent.value = '';
+
+      crearTablaVentas();
 
       alert('Venta agregada');
     } else {
@@ -217,3 +191,61 @@ btnLegajoConsu3.addEventListener('click', () => {
   });
   resultadoConsulta3.innerHTML += `Total vendido de todos los empleados: $${total}`;
 });
+
+let headersEmp = [
+  'Nombre del empleado',
+  'Apellido del empleado',
+  'Legajo del empleado',
+];
+function crearTablaEmpleados() {
+  tablaEmpleados.innerHTML = '';
+  let table = document.createElement('table');
+  let headerRow = document.createElement('tr');
+  headersEmp.forEach((headerText) => {
+    let header = document.createElement('th');
+    let textNode = document.createTextNode(headerText);
+    header.appendChild(textNode);
+    headerRow.appendChild(header);
+  });
+  table.appendChild(headerRow);
+  arrayEmpleados.forEach((emp) => {
+    let row = document.createElement('tr');
+    Object.values(emp).forEach((text) => {
+      let cell = document.createElement('td');
+      let textNode = document.createTextNode(text);
+      cell.appendChild(textNode);
+      row.appendChild(cell);
+    });
+    table.appendChild(row);
+  });
+  tablaEmpleados.appendChild(table);
+}
+
+let headersVen = [
+  'Fecha de la venta',
+  'Importe de la venta',
+  'Legajo del empleado responsable',
+];
+function crearTablaVentas() {
+  tablaVentas.innerHTML = '';
+  let table = document.createElement('table');
+  let headerRow = document.createElement('tr');
+  headersVen.forEach((headerText) => {
+    let header = document.createElement('th');
+    let textNode = document.createTextNode(headerText);
+    header.appendChild(textNode);
+    headerRow.appendChild(header);
+  });
+  table.appendChild(headerRow);
+  arrayVentas.forEach((emp) => {
+    let row = document.createElement('tr');
+    Object.values(emp).forEach((text) => {
+      let cell = document.createElement('td');
+      let textNode = document.createTextNode(text);
+      cell.appendChild(textNode);
+      row.appendChild(cell);
+    });
+    table.appendChild(row);
+  });
+  tablaVentas.appendChild(table);
+}
