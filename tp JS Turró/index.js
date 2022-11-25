@@ -67,9 +67,7 @@ btnBaja.addEventListener('click', () => {
 
     alert('Empleado eliminado');
   } else {
-    alert(
-      'ERROR: Ingrese un numero de legajo valido para dar de baja un empleado'
-    );
+    alert('ERROR: Ingrese un legajo valido para dar de baja un empleado');
   }
 });
 
@@ -91,9 +89,7 @@ btnModi.addEventListener('click', () => {
 
     alert('Modificacion realizada');
   } else {
-    alert(
-      'ERROR: Ingrese un numero de legajo valido para modificar un empleado'
-    );
+    alert('ERROR: Ingrese un legajo valido para modificar un empleado');
   }
 });
 
@@ -135,9 +131,7 @@ btnLegajoConsu1.addEventListener('click', () => {
     legajoConsu1.value = '';
     resultadoConsulta1.innerHTML = `Nombres del empleado con legajo ingresado: ${legajoRepetido.apellido}, ${legajoRepetido.nombre}`;
   } else {
-    alert(
-      'ERROR: Ingrese un numero de legajo valido para realizar una consulta'
-    );
+    alert('ERROR: Ingrese un legajo valido para realizar una consulta');
   }
 });
 
@@ -150,7 +144,7 @@ btnLegajoConsu2.addEventListener('click', () => {
       (venta) => venta.legajo === legajoConsu2.value
     );
 
-    let txt = '';
+    let txt = `Ventas realizadas por el empleado ${legajoConsu2.value}: `;
     let total = 0;
     let i = 1;
     ventasEmpleado.forEach((venta) => {
@@ -160,16 +154,15 @@ btnLegajoConsu2.addEventListener('click', () => {
     });
 
     legajoConsu2.value = '';
-    resultadoConsulta2.innerHTML = txt + `Importe total: $${total}`;
+    resultadoConsulta2.innerHTML =
+      txt + `Total de ventas del empleado: $${total}`;
   } else {
-    alert(
-      'ERROR: Ingrese un numero de legajo valido para realizar una consulta'
-    );
+    alert('ERROR: Ingrese un legajo valido para realizar una consulta');
   }
 });
 
 btnLegajoConsu3.addEventListener('click', () => {
-  //quiere ver cada vendedor, el subtotal (suma de sus ventas) y el total de todos los vendedores
+  resultadoConsulta3.innerHTML = '';
   let total = 0;
   arrayEmpleados.forEach((empleado) => {
     const ventasEmpleado = arrayVentas.filter(

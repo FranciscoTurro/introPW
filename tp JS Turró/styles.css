@@ -7,4 +7,33 @@ th,
 td {
   border: 1px solid black;
   padding: 5px;
+  width: 240px;
+  height: 30px;
+}
+
+#resultadoConsulta3,
+#resultadoConsulta2,
+#resultadoConsulta1 {
+  color: red;
+}
+
+button {
+  width: 185px;
+  height: 30px;
+  cursor: pointer;
+}
+
+input {
+  width: 185px;
+  height: 30px;
+}
+
+#container {
+  display: grid;
+  gap: 30px;
+}
+
+#altaEmpleados {
+  display: grid;
+  gap: 10px;
 }

@@ -9,65 +9,71 @@
     <title>TP Francisco Turró</title>
   </head>
   <body>
-    <div id="altaEmpleados">
-      <label for="nombre">Nombre del empleado</label>
-      <input type="text" id="nombre" />
-      <label for="apellido">Apellido del empleado</label>
-      <input type="text" id="apellido" />
-      <label for="legajoEmp">Legajo del empleado</label>
-      <input type="text" id="legajoEmp" />
-      <button class="btnAlta">Alta</button>
-      <button class="btnBaja">Baja</button>
-      <button class="btnModi">Modificar</button>
+    <div id="container">
+      <div id="altaEmpleados">
+        <div>
+          <label for="nombre">Nombre del empleado</label>
+          <input type="text" id="nombre" />
+          <label for="apellido">Apellido del empleado</label>
+          <input type="text" id="apellido" />
+          <label for="legajoEmp">Legajo del empleado</label>
+          <input type="text" id="legajoEmp" />
+        </div>
+        <div>
+          <button class="btnAlta">Alta</button>
+          <button class="btnBaja">Baja</button>
+          <button class="btnModi">Modificar</button>
+        </div>
+      </div>
+
+      <br />
+
+      <div id="altaVentas">
+        <label for="legajoVent">Legajo del empleado asociado a la venta</label>
+        <input type="text" id="legajoVent" />
+        <label for="fecha">Fecha de la venta</label>
+        <input type="date" id="fecha" />
+        <label for="importe">Importe de la venta</label>
+        <input type="number" id="importe" />
+        <button class="btnAltaVentas">Alta</button>
+      </div>
+
+      <br />
+
+      <div id="legajoConsulta1">
+        <label for="legajoConsu1"
+          >Legajo del empleado a consultar (consulta 1)</label
+        >
+        <input type="text" id="legajoConsu1" />
+        <button id="btnLegajoConsu1">Realizar consulta</button>
+        <p id="resultadoConsulta1"></p>
+      </div>
+
+      <br />
+
+      <div id="legajoConsulta2">
+        <label for="legajoConsu2"
+          >Legajo del empleado a consultar (consulta 2)</label
+        >
+        <input type="text" id="legajoConsu2" />
+        <button id="btnLegajoConsu2">Realizar consulta</button>
+        <p id="resultadoConsulta2"></p>
+      </div>
+
+      <br />
+
+      <div id="legajoConsulta3">
+        <button id="btnLegajoConsu3">Realizar consulta (consulta 3)</button>
+        <p id="resultadoConsulta3"></p>
+      </div>
+
+      <br />
+
+      <div class="tablaEmpleados"></div>
+
+      <br />
+
+      <div class="tablaVentas"></div>
     </div>
-
-    <br />
-
-    <div id="altaVentas">
-      <label for="legajoVent">Legajo del empleado asociado a la venta</label>
-      <input type="text" id="legajoVent" />
-      <label for="fecha">Fecha de la venta</label>
-      <input type="date" id="fecha" />
-      <label for="importe">Importe de la venta</label>
-      <input type="number" id="importe" />
-      <button class="btnAltaVentas">Alta</button>
-    </div>
-
-    <br />
-
-    <div id="legajoConsulta1">
-      <label for="legajoConsu1"
-        >Legajo del empleado a consultar (consulta 1)</label
-      >
-      <input type="text" id="legajoConsu1" />
-      <button id="btnLegajoConsu1">Realizar consulta</button>
-      <p id="resultadoConsulta1"></p>
-    </div>
-
-    <br />
-
-    <div id="legajoConsulta2">
-      <label for="legajoConsu2"
-        >Legajo del empleado a consultar (consulta 2)</label
-      >
-      <input type="text" id="legajoConsu2" />
-      <button id="btnLegajoConsu2">Realizar consulta</button>
-      <p id="resultadoConsulta2"></p>
-    </div>
-
-    <br />
-
-    <div id="legajoConsulta3">
-      <button id="btnLegajoConsu3">Realizar consulta (consulta 3)</button>
-      <p id="resultadoConsulta3"></p>
-    </div>
-
-    <br />
-
-    <div class="tablaEmpleados"></div>
-
-    <br />
-
-    <div class="tablaVentas"></div>
   </body>
 </html>
